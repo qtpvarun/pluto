@@ -1,0 +1,68 @@
+{
+    "name": "Department",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activeFlag",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "projectType",
+            "otherEntityRelationshipName": "department",
+            "relationshipName": "projectTypes"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "project",
+            "otherEntityRelationshipName": "parentProject",
+            "relationshipName": "projects"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "department",
+            "relationshipName": "team",
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "metrices",
+            "otherEntityRelationshipName": "departments",
+            "relationshipName": "metrices",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "calender",
+            "otherEntityRelationshipName": "department",
+            "relationshipName": "calenders"
+        }
+    ],
+    "changelogDate": "20200210220056",
+    "entityTableName": "department",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "ProTrack"
+    ]
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Project.
+    -->
+    <changeSet id="20200210220058-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="project_type_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_project_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="program_manager_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_program_manager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="project_coordinator_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_project_coordinator_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="prpject_lead_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_prpject_lead_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="superviser_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_superviser_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="prpject_manager_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_prpject_manager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="prpject_engineer_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_prpject_engineer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="technician_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_technician_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="engineer_of_record_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_engineer_of_record_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="traffic_specialist_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_traffic_specialist_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="prpject_staff_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_prpject_staff_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="quality_specialist_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_quality_specialist_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="parent_project_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_parent_project_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="department"/>
+
+    </changeSet>
+</databaseChangeLog>

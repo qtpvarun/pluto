@@ -1,0 +1,73 @@
+{
+    "name": "Calender",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "jsonUIDetails",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "taskHistory",
+            "otherEntityRelationshipName": "calender",
+            "relationshipName": "taskHistory",
+            "otherEntityField": "eventTopic",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "calenders",
+            "relationshipName": "task",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "project",
+            "otherEntityRelationshipName": "calenders",
+            "relationshipName": "project",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "department",
+            "otherEntityRelationshipName": "calenders",
+            "relationshipName": "department",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "calender",
+            "relationshipName": "assignedTo",
+            "otherEntityField": "login"
+        }
+    ],
+    "changelogDate": "20200210220102",
+    "entityTableName": "calender",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "ProTrack"
+    ]
+}

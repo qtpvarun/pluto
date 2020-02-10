@@ -1,0 +1,178 @@
+{
+    "name": "Project",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "billingCompany",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "careerName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "siteNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "siteName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "siteCompany",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "siteLatitude",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "siteLongitude",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "siteType",
+            "fieldType": "SiteType",
+            "fieldValues": "Architectural,Guyed,Industrial,Monopine,Monopole,Overhead,Rooftop,SelfSupporter,SmallCell,StealthTower,Undefined,NULL,WaterTower,WoodPole"
+        },
+        {
+            "fieldName": "isSite360",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "internalDue",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "pONumber",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "parentProject",
+            "relationshipName": "tasks"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "projectType",
+            "otherEntityRelationshipName": "projects",
+            "relationshipName": "projectType",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "programManager",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "projectCoordinator",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "prpjectLead",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "superviser",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "prpjectManager",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "prpjectEngineer",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "technician",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "engineerOfRecord",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "trafficSpecialist",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "prpjectStaff",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "qualitySpecialist",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "department",
+            "otherEntityRelationshipName": "projects",
+            "relationshipName": "parentProject",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "calender",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "calenders"
+        }
+    ],
+    "changelogDate": "20200210220058",
+    "entityTableName": "project",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "ProTrack"
+    ]
+}

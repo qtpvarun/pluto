@@ -1,0 +1,61 @@
+{
+    "name": "TaskHistory",
+    "fields": [
+        {
+            "fieldName": "eventDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "eventType",
+            "fieldType": "EventType",
+            "fieldValues": "ASSIGN,CHECKOUT,CHECKIN,QC,CUSTOMER,PASS,FAIL,APPROVE,REJECT"
+        },
+        {
+            "fieldName": "eventTopic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eventDetail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isRedline",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isIdleTask",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "jsonUIDetails",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "calender",
+            "otherEntityRelationshipName": "taskHistory",
+            "relationshipName": "calender",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "taskHistory",
+            "relationshipName": "parentTask",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200210220101",
+    "entityTableName": "task_history",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "ProTrack"
+    ]
+}

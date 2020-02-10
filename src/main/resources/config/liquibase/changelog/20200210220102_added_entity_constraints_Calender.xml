@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Calender.
+    -->
+    <changeSet id="20200210220102-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="task_history_id"
+                                 baseTableName="calender"
+                                 constraintName="fk_calender_task_history_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="task_history"/>
+
+        <addForeignKeyConstraint baseColumnNames="task_id"
+                                 baseTableName="calender"
+                                 constraintName="fk_calender_task_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="task"/>
+
+        <addForeignKeyConstraint baseColumnNames="project_id"
+                                 baseTableName="calender"
+                                 constraintName="fk_calender_project_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project"/>
+
+        <addForeignKeyConstraint baseColumnNames="department_id"
+                                 baseTableName="calender"
+                                 constraintName="fk_calender_department_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="department"/>
+
+        <addForeignKeyConstraint baseColumnNames="assigned_to_id"
+                                 baseTableName="calender"
+                                 constraintName="fk_calender_assigned_to_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+    </changeSet>
+</databaseChangeLog>

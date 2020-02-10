@@ -1,0 +1,11 @@
+id;name;description;status;assigned_date;estimated_completion_date;closed_date;priority;is_overdue;in_progress
+1;viral;payment Illinois dot-com;NeedInfo;2020-02-10T16:36:33;2020-02-10T18:20:55;2020-02-10T13:14:55;High;true;false
+2;scalable;Unbranded Fresh Car;Closed;2020-02-10T12:10:04;2020-02-10T05:17:25;2020-02-09T22:26:25;Low;true;false
+3;Engineer Bedfordshire feed;Assurance Nebraska Mississippi;Approved;2020-02-10T17:05:43;2020-02-10T17:31:41;2020-02-09T22:47:08;High;false;true
+4;Open-source Metal Auto Loan Account;Awesome;ReOpen;2020-02-10T09:14:07;2020-02-10T07:45:51;2020-02-10T20:46:24;High;false;true
+5;orange Trinidad and Tobago Dollar Gorgeous;UAE Dirham;InProgress;2020-02-10T02:57:16;2020-02-10T13:38:40;2020-02-10T19:27:23;Medium;true;true
+6;Implementation Shirt Unbranded Soft Fish;Refined Soft Keyboard synthesizing;InProgress;2020-02-10T02:28:03;2020-02-10T16:21:38;2020-02-10T06:03:09;Medium;true;true
+7;Tanzanian Shilling Lights;e-enable Plaza intranet;Approved;2020-02-10T12:37:18;2020-02-10T12:48:14;2020-02-10T09:15:10;High;false;true
+8;Credit Card Account;Belize Dollar Bacon;InProgress;2020-02-10T03:05:28;2020-02-09T22:04:22;2020-02-10T18:22:37;Medium;false;false
+9;application Cambridgeshire;scalable connecting Fantastic;Approved;2020-02-10T09:03:38;2020-02-10T18:25:09;2020-02-10T10:20:41;Low;true;true
+10;payment;Nevada port Money Market Account;InProgress;2020-02-10T12:23:49;2020-02-10T11:51:03;2020-02-10T10:55:45;Medium;false;true

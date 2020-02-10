@@ -1,0 +1,123 @@
+{
+    "name": "Task",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "TaskStatus",
+            "fieldValues": "UN_ASSIGNED,ASSIGNED,STAFF_START,TO_UPLOAD,TIE_POINTS,RE_ASSIGN,CHECKED_OUT,CHECKED_IN,QC_START,QC_FAIL,QC_PASS,CUSTOMER_REVIEW,CUSTOMER_REJECT,CUSTOMER_APPROVE"
+        },
+        {
+            "fieldName": "assignedDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estimatedCompletionDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "completedDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "draftDueDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "internalDueDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "priority",
+            "fieldType": "Priority",
+            "fieldValues": "Low,Medium,High"
+        },
+        {
+            "fieldName": "isOverdue",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "inProgress",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "grade",
+            "fieldType": "Grade",
+            "fieldValues": "A,B,C,D,E,F"
+        },
+        {
+            "fieldName": "jsonUIDetails",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "subTask",
+            "otherEntityRelationshipName": "parentTask",
+            "relationshipName": "subTasks"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "taskHistory",
+            "otherEntityRelationshipName": "parentTask",
+            "relationshipName": "taskHistory"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "task",
+            "relationshipName": "assignedTo",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "task",
+            "relationshipName": "assignedBy",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "task",
+            "relationshipName": "assignedQC",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "project",
+            "otherEntityRelationshipName": "tasks",
+            "relationshipName": "parentProject",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "calender",
+            "otherEntityRelationshipName": "task",
+            "relationshipName": "calenders"
+        }
+    ],
+    "changelogDate": "20200210220059",
+    "entityTableName": "task",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "ProTrack"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "name": "ProjectType",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "department",
+            "otherEntityRelationshipName": "projectTypes",
+            "relationshipName": "department",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "project",
+            "otherEntityRelationshipName": "projectType",
+            "relationshipName": "projects"
+        }
+    ],
+    "changelogDate": "20200210220057",
+    "entityTableName": "project_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "ProTrack"
+    ]
+}

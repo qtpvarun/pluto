@@ -1,0 +1,27 @@
+{
+  "proTrackApp": {
+    "metrices": {
+      "home": {
+        "title": "Metrices",
+        "createLabel": "Créer un nouveau Metrices",
+        "createOrEditLabel": "Créer ou éditer un Metrices",
+        "notFound": "Aucun Metrices trouvé"
+      },
+      "created": "Un nouveau Metrices a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Metrices avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Metrices avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Metrices {{ id }} ?"
+      },
+      "detail": {
+        "title": "Metrices"
+      },
+      "name": "Name",
+      "description": "Description",
+      "sum": "Sum",
+      "count": "Count",
+      "average": "Average",
+      "departments": "Departments"
+    }
+  }
+}

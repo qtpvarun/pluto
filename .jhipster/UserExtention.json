@@ -1,0 +1,37 @@
+{
+    "name": "UserExtention",
+    "fields": [
+        {
+            "fieldName": "login",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "profilePic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "group",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jsonOtherDetails",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200210220055",
+    "entityTableName": "user_extention",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "ProTrack"
+    ]
+}

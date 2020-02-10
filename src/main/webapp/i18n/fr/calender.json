@@ -1,0 +1,30 @@
+{
+  "proTrackApp": {
+    "calender": {
+      "home": {
+        "title": "Calenders",
+        "createLabel": "Créer un nouveau Calender",
+        "createOrEditLabel": "Créer ou éditer un Calender",
+        "notFound": "Aucun Calender trouvé"
+      },
+      "created": "Un nouveau Calender a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Calender avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Calender avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Calender {{ id }} ?"
+      },
+      "detail": {
+        "title": "Calender"
+      },
+      "title": "Title",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "jsonUIDetails": "Json UI Details",
+      "taskHistory": "Task History",
+      "task": "Task",
+      "project": "Project",
+      "department": "Department",
+      "assignedTo": "Assigned To"
+    }
+  }
+}

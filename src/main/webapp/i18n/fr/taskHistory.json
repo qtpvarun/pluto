@@ -1,0 +1,30 @@
+{
+  "proTrackApp": {
+    "taskHistory": {
+      "home": {
+        "title": "TaskHistories",
+        "createLabel": "Créer un nouveau Task History",
+        "createOrEditLabel": "Créer ou éditer un Task History",
+        "notFound": "Aucun Task History trouvé"
+      },
+      "created": "Un nouveau Task History a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Task History avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Task History avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Task History {{ id }} ?"
+      },
+      "detail": {
+        "title": "Task History"
+      },
+      "eventDate": "Event Date",
+      "eventType": "Event Type",
+      "eventTopic": "Event Topic",
+      "eventDetail": "Event Detail",
+      "isRedline": "Is Redline",
+      "isIdleTask": "Is Idle Task",
+      "jsonUIDetails": "Json UI Details",
+      "calender": "Calender",
+      "parentTask": "Parent Task"
+    }
+  }
+}

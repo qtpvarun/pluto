@@ -1,0 +1,95 @@
+{
+    "name": "SubTask",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "SubTaskStatus",
+            "fieldValues": "Open,Closed,InProgress,OnHold,NeedInfo,Approved,Rejected,ReOpen"
+        },
+        {
+            "fieldName": "assignedDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "estimatedCompletionDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "closedDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "priority",
+            "fieldType": "Priority",
+            "fieldValues": "Low,Medium,High"
+        },
+        {
+            "fieldName": "isOverdue",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "inProgress",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "subTask",
+            "relationshipName": "assignedTo",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "subTask",
+            "relationshipName": "assignedBy",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "subTask",
+            "relationshipName": "sourceUser",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "subTask",
+            "relationshipName": "targetUser",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "subTasks",
+            "relationshipName": "parentTask",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200210220100",
+    "entityTableName": "sub_task",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "ProTrack"
+    ]
+}

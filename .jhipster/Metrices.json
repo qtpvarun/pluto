@@ -1,0 +1,50 @@
+{
+    "name": "Metrices",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "count",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "average",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "department",
+            "otherEntityRelationshipName": "metrices",
+            "relationshipName": "departments",
+            "otherEntityField": "name",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200210220104",
+    "entityTableName": "metrices",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "ProTrack"
+    ]
+}

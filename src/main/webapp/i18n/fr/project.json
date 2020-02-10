@@ -1,0 +1,49 @@
+{
+  "proTrackApp": {
+    "project": {
+      "home": {
+        "title": "Projects",
+        "createLabel": "Créer un nouveau Project",
+        "createOrEditLabel": "Créer ou éditer un Project",
+        "notFound": "Aucun Project trouvé"
+      },
+      "created": "Un nouveau Project a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Project avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Project avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Project {{ id }} ?"
+      },
+      "detail": {
+        "title": "Project"
+      },
+      "name": "Name",
+      "description": "Description",
+      "billingCompany": "Billing Company",
+      "careerName": "Career Name",
+      "siteNumber": "Site Number",
+      "siteName": "Site Name",
+      "siteCompany": "Site Company",
+      "siteLatitude": "Site Latitude",
+      "siteLongitude": "Site Longitude",
+      "siteType": "Site Type",
+      "isSite360": "Is Site 360",
+      "internalDue": "Internal Due",
+      "pONumber": "P O Number",
+      "tasks": "Tasks",
+      "projectType": "Project Type",
+      "programManager": "Program Manager",
+      "projectCoordinator": "Project Coordinator",
+      "prpjectLead": "Prpject Lead",
+      "superviser": "Superviser",
+      "prpjectManager": "Prpject Manager",
+      "prpjectEngineer": "Prpject Engineer",
+      "technician": "Technician",
+      "engineerOfRecord": "Engineer Of Record",
+      "trafficSpecialist": "Traffic Specialist",
+      "prpjectStaff": "Prpject Staff",
+      "qualitySpecialist": "Quality Specialist",
+      "parentProject": "Parent Project",
+      "calenders": "Calenders"
+    }
+  }
+}

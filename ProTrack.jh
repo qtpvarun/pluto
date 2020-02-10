@@ -1,0 +1,188 @@
+application {
+  config {
+    baseName ProTrack,
+    applicationType monolith,
+    packageName com.btgrp.protrack,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    devDatabaseType h2Disk,
+    cacheProvider hazelcast,
+    buildTool maven,
+    clientFramework react,
+    useSass false,
+    testFrameworks [protractor]
+  }
+  entities *
+}
+
+entity UserExtention {
+    login String required unique,
+    profilePic String,
+    group String,
+    jsonOtherDetails String
+}
+
+entity Department {
+    // erpId String required unique, 
+    name String required unique,
+    description String,
+    activeFlag Boolean
+}
+entity ProjectType {
+    // erpId String required unique,
+    name String required unique,
+    description String
+}
+entity Project {
+    // erpId String required unique, 
+    name String required unique, // the business-friendly name of project
+    description String, // or memo - brief message attached to the project
+    billingCompany String,
+    careerName String,
+    siteNumber Integer, // B+T unique identifier for a tower or location
+    siteName String,
+    siteCompany String,
+    siteLatitude Double, // 
+    siteLongitude Double, // 
+    siteType SiteType, // description of the type of tower associated with the project
+    isSite360 Boolean, // flag to determine if project uses Site360 system
+    internalDue Instant, // te – the department’s scheduled due date for the project in ERP
+    pONumber String // purchase order number for the project
+}
+entity Task {
+    // erpId String unique,
+    name String required unique,
+    description String,
+    // erpProjectID String, // – the unique alphanumeric identifier for project from ERP
+    // erpProjectSequence String, // – the sequential identifier for project from ERP
+    // erpProjectType String, // – unique numeric identifier for ERP project type
+    // erpStatus String, // – unique numeric identifier for ERP project status
+    status TaskStatus, 
+    assignedDate String, // – the date that Task was assigned (Unassigned →Active)
+    estimatedCompletionDate Instant, // – the date that the Task is expected to be
+    completedDate Instant, // – the date that Task completed its workflow
+    draftDueDate Instant, // – preliminary due date for Task in ProTrack only
+    internalDueDate Instant, // – preliminary due date for the project in ERP
+    priority Priority, // – Low, Medium, High
+    isOverdue Boolean, // – flag for identifying that a task is overdue
+    inProgress Boolean, // – flag for identifying that a task is in progress
+    grade Grade, // – letter grade (A-F) set by QC to show the quality of completed work
+    jsonUIDetails String
+}
+
+entity SubTask {
+    name String required unique,
+    description String,
+    status SubTaskStatus, // – Open or Closed
+    assignedDate Instant, // – the date that Sub-Task was assigned
+    estimatedCompletionDate Instant, // – the date that the Task is expected to be completed
+    closedDate Instant, // – the date that Sub-Task was closed
+    priority Priority, // – Low, Medium, High
+    isOverdue Boolean, // – flag for identifying that a sub-task is overdue
+    inProgress Boolean // – flag for identifying that a sub-task is in progress
+}
+entity TaskHistory {
+    eventDate Instant, // – timestamp for a given event record
+    eventType EventType, // – describes the type of event that occurred (change, message, approval, etc.)
+    eventTopic String, // – user-provided subject of the event or comment
+    eventDetail String, // – body text for event or comment
+    isRedline Boolean, // – flag indicating that a comment requires immediate attention
+    isIdleTask Boolean,
+    jsonUIDetails String
+}
+
+entity Calender {
+    title String required,
+    startDate Instant,
+    endDate Instant,
+    jsonUIDetails String
+}
+
+entity Board { 
+    name String required unique,
+    boardFilter String
+}
+
+entity Metrices { 
+    name String required unique,
+    description String,
+    sum Integer,
+    count Integer,
+    average Integer
+}
+
+
+enum Priority {
+    Low, Medium, High
+}
+enum Grade {
+    A, B, C, D, E, F
+}
+enum SiteType {
+    Architectural, Guyed, Industrial, Monopine, Monopole, Overhead, Rooftop, SelfSupporter, SmallCell, StealthTower, Undefined, NULL, WaterTower, WoodPole
+}
+
+enum EventType {
+    ASSIGN, CHECKOUT, CHECKIN, QC, CHECKOUT, CUSTOMER, CHECKOUT, PASS, FAIL, APPROVE, REJECT
+}
+
+enum SubTaskStatus {
+    Open, Closed, InProgress, OnHold, NeedInfo, Approved, Rejected, ReOpen
+}
+enum TaskStatus {
+    UN_ASSIGNED, ASSIGNED, STAFF_START, TO_UPLOAD, TIE_POINTS, RE_ASSIGN, CHECKED_OUT, CHECKED_IN, QC_START, QC_FAIL, QC_PASS, CUSTOMER_REVIEW, CUSTOMER_REJECT, CUSTOMER_APPROVE
+}
+
+relationship OneToOne {
+    Calender{taskHistory(eventTopic)} to TaskHistory{calender(title)}
+}
+
+relationship OneToMany {
+    Department{projectTypes(name)} to ProjectType{department(name)},
+    Project{tasks(name)} to Task{parentProject(name)},
+
+    Department{projects(name)} to Project{parentProject(name)},
+    Task{subTasks(name)} to SubTask{parentTask(name)},
+    Task{taskHistory(eventTopic)} to TaskHistory{parentTask(name)}
+}
+
+relationship ManyToOne {
+    Project{projectType(name)} to ProjectType{projects(name)},
+    Calender{task(name)} to Task{calenders(title)},
+    Calender{project(name)} to Project{calenders(title)},
+    Calender{department(name)} to Department{calenders(title)},
+    Project{programManager(login)} to User,
+    Project{projectCoordinator(login)} to User,
+    Project{prpjectLead(login)} to User,
+    Project{superviser(login)} to User,
+    Project{prpjectManager(login)} to User,
+    Project{prpjectEngineer(login)} to User,
+    Project{technician(login)} to User,
+    Project{engineerOfRecord(login)} to User,
+    Project{trafficSpecialist(login)} to User,
+    Project{prpjectStaff(login)} to User,
+    Project{qualitySpecialist(login)} to User,
+    Calender{assignedTo(login)} to User,
+    Task{assignedTo(login)} to User,
+    Task{assignedBy(login)} to User,
+    Task{assignedQC(login)} to User,
+    SubTask{assignedTo(login)} to User,
+    SubTask{assignedBy(login)} to User,
+    SubTask{sourceUser(login)} to User,
+    SubTask{targetUser(login)} to User
+}
+
+relationship ManyToMany {
+    Department{team(login)} to User,
+    Department{metrices(name)} to Metrices{departments(name)}    
+}
+
+// Set pagination options
+// paginate * with pagination
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+// Set service options to all except few
+service * with serviceImpl
+// Set an angular suffix
+// angularSuffix * with mySuffix
+// search Task with elasticsearch

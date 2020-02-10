@@ -1,0 +1,25 @@
+{
+  "proTrackApp": {
+    "userExtention": {
+      "home": {
+        "title": "UserExtentions",
+        "createLabel": "Créer un nouveau User Extention",
+        "createOrEditLabel": "Créer ou éditer un User Extention",
+        "notFound": "Aucun User Extention trouvé"
+      },
+      "created": "Un nouveau User Extention a été créé avec l'identifiant {{ param }}",
+      "updated": "Le User Extention avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le User Extention avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le User Extention {{ id }} ?"
+      },
+      "detail": {
+        "title": "User Extention"
+      },
+      "login": "Login",
+      "profilePic": "Profile Pic",
+      "group": "Group",
+      "jsonOtherDetails": "Json Other Details"
+    }
+  }
+}
